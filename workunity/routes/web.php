@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\DepartmentController;
+
+ 
+Route::get('/employees', [EmployeeController::class, 'index']);
+Route::get('/employees/list', [EmployeeController::class, 'list']);
+Route::get('/employees/create', [EmployeeController::class, 'create']);
+Route::get('/departments', [DepartmentController::class, 'index']);
