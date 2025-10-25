@@ -17,9 +17,22 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\DepartmentController;
+use App\Models\User;
 
- 
-Route::get('/employees', [EmployeeController::class, 'index']);
-Route::get('/employees/list', [EmployeeController::class, 'list']);
-Route::get('/employees/create', [EmployeeController::class, 'create']);
-Route::get('/departments', [DepartmentController::class, 'index']);
+Route::get('/', [EmployeeController::class, 'index'])->name('employees.dashboard');
+
+Route::get('/employees', [EmployeeController::class, 'list'])->name('employees.list');
+Route::get('/employees/create', [EmployeeController::class, 'create'])->name('employees.create');
+Route::post('/employees', [EmployeeController::class, 'store'])->name('employees.store');
+Route::get('/employees/{employee}', [EmployeeController::class, 'show'])->name('employees.show');
+Route::get('/employees/{employee}/edit', [EmployeeController::class, 'edit'])->name('employees.edit');
+Route::put('/employees/{employee}', [EmployeeController::class, 'update'])->name('employees.update');
+Route::delete('/employees/{employee}', [EmployeeController::class, 'destroy'])->name('employees.destroy');
+Route::get('/departments', [DepartmentController::class, 'index'])->name('departments.index');
+
+
+Route::get('/users', function () {
+    $users = User::all();
+    return view('users', compact('users'));
+})->name('users.index');
+

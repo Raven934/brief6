@@ -8,6 +8,6 @@ class DepartmentController extends Controller
 {
     public function index()
     {
-        return view('departments.index');
+        return view('index');
     }
 }

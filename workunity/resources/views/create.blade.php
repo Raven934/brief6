@@ -10,8 +10,8 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#4a5cdb',
-                        secondary: '#667eea'
+                        primary: '#ec4899',
+                        secondary: '#f9a8d4'
                     }
                 }
             }
@@ -21,7 +21,7 @@
 <body class="bg-gradient-to-br from-slate-100 to-slate-300 min-h-screen font-sans">
     <div class="max-w-4xl mx-auto px-5 py-10">
         <div class="flex items-center gap-4 mb-8">
-            <a href="/employees" class="bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300">
+            <a href="{{ route('employees.dashboard') }}" class="bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300">
                 ← Retour
             </a>
             <h1 class="text-primary text-3xl font-bold md:text-4xl">
@@ -30,7 +30,7 @@
         </div>
 
         <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
-            <div class="bg-gradient-to-r from-teal-500 to-green-500 text-white p-6">
+            <div class="bg-pink-500 text-white p-6">
                 <h2 class="text-2xl font-bold">Nouveau Employé</h2>
                 <p class="opacity-90">Remplissez les informations de l'employé</p>
             </div>
@@ -153,7 +153,7 @@
                 <div class="flex flex-col sm:flex-row gap-4 mt-8">
                     <button 
                         type="submit"
-                        class="flex-1 bg-gradient-to-r from-teal-500 to-green-500 text-white font-bold py-4 px-6 rounded-xl hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
+                        class="flex-1 bg-pink-500 text-white font-bold py-4 px-6 rounded-xl hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
                     >
                         ✅ Ajouter l'employé
                     </button>

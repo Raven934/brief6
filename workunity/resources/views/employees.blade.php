@@ -10,8 +10,8 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#4a5cdb',
-                        secondary: '#667eea'
+                        primary: '#ec4899',
+                        secondary: '#f9a8d4'
                     }
                 }
             }
@@ -21,7 +21,7 @@
 <body class="bg-gradient-to-br from-slate-100 to-slate-300 min-h-screen font-sans">
     <div class="max-w-6xl mx-auto px-5 py-10 text-center">
         <div class="flex items-center justify-center gap-4 mb-5">
-            <div class="w-12 h-12 bg-gradient-to-r from-yellow-400 to-yellow-300 rounded-full flex items-center justify-center text-2xl">
+            <div class="w-12 h-12 bg-pink-400 rounded-full flex items-center justify-center text-2xl">
                 👨‍💼
             </div>
             <h1 class="text-primary text-4xl font-bold drop-shadow-sm md:text-5xl">
@@ -34,21 +34,15 @@
         </p>
         
         <div class="flex justify-center gap-8 flex-wrap mb-16">
-            <a href="/employees/list" class="group bg-gradient-to-br from-indigo-500 to-purple-600 text-white rounded-3xl p-10 min-w-[200px] shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 no-underline block">
+            <a href="{{ route('employees.list') }}" class="group bg-pink-500 text-white rounded-3xl p-10 min-w-[200px] shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 no-underline block">
                 <div class="text-5xl mb-5">📋</div>
                 <div class="text-xl font-bold leading-snug">Liste des employés</div>
             </a>
             
-            <a href="/employees/create" class="group bg-gradient-to-br from-teal-500 to-green-500 text-white rounded-3xl p-10 min-w-[200px] shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 no-underline block">
+            <a href="{{ route('employees.create') }}" class="group bg-pink-400 text-white rounded-3xl p-10 min-w-[200px] shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 no-underline block">
                 <div class="text-5xl mb-5">➕</div>
                 <div class="text-xl font-bold leading-snug">Ajouter un employé</div>
             </a>
-            
-            <a href="/departments" class="group bg-gradient-to-br from-pink-500 to-rose-500 text-white rounded-3xl p-10 min-w-[200px] shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 no-underline block">
-                <div class="text-5xl mb-5">🏢</div>
-                <div class="text-xl font-bold leading-snug">Gérer les départements</div>
-            </a>
-        </div>
         
     </div>
 </body>
