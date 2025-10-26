@@ -20,7 +20,7 @@
 </head>
 <body class="bg-gradient-to-br from-slate-100 to-slate-300 min-h-screen font-sans">
     <div class="max-w-7xl mx-auto px-5 py-10">
-        <!-- Header -->
+        
         <div class="flex items-center justify-between mb-8">
             <div class="flex items-center gap-4">
                 <a href="{{ route('employees.dashboard') }}" class="bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300">
