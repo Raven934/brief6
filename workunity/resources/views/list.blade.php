@@ -34,6 +34,7 @@
                 ➕ Ajouter un Employé
             </a>
         </div>
+
         <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
             @if(isset($employees) && $employees->count() > 0)
                 <div class="overflow-x-auto">
@@ -76,9 +77,6 @@
                                 </td>
                                 <td class="px-6 py-4">
                                     <div class="flex items-center justify-center gap-2">
-                                        <a href="{{ route('employees.show', $employee) }}" class="bg-pink-400 text-white px-3 py-1 rounded-lg hover:bg-pink-500 transition-colors text-sm">
-                                            👁️ Voir
-                                        </a>
                                         <a href="{{ route('employees.edit', $employee) }}" class="bg-pink-300 text-white px-3 py-1 rounded-lg hover:bg-pink-400 transition-colors text-sm">
                                             ✏️ Modifier
                                         </a>
@@ -139,9 +137,6 @@
             </div>
         @endif
 
-                </div>
-            </div>
-        @endif
     </div>
 </body>
 </html>
