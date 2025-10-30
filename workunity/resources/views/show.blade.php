@@ -74,9 +74,49 @@
                         
                         <div class="space-y-4">
                             <div>
+                                <label class="block text-sm font-bold text-gray-600 mb-1">Département</label>
+                                <div class="text-lg text-gray-800">
+                                    <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm font-semibold">
+                                        {{ ucfirst($employee->departement ?? 'Non renseigné') }}
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div>
                                 <label class="block text-sm font-bold text-gray-600 mb-1">Poste</label>
                                 <div class="text-lg text-gray-800">
                                     {{ $employee->poste ?? 'Non renseigné' }}
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-bold text-gray-600 mb-1">Date d'embauche</label>
+                                <div class="text-lg text-gray-800">
+                                    {{ $employee->date_embauche ? $employee->date_embauche->format('d/m/Y') : 'Non renseigné' }}
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-bold text-gray-600 mb-1">Salaire</label>
+                                <div class="text-lg text-gray-800">
+                                    @if($employee->salaire)
+                                        <span class="font-bold text-green-600 text-xl">{{ number_format($employee->salaire, 0, ',', ' ') }} €/mois</span>
+                                    @else
+                                        <span class="text-gray-400">Non renseigné</span>
+                                    @endif
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-bold text-gray-600 mb-1">Téléphone</label>
+                                <div class="text-lg text-gray-800">
+                                    @if($employee->telephone)
+                                        <a href="tel:{{ $employee->telephone }}" class="text-pink-500 hover:text-pink-600">
+                                            {{ $employee->telephone }}
+                                        </a>
+                                    @else
+                                        <span class="text-gray-400">Non renseigné</span>
+                                    @endif
                                 </div>
                             </div>
                         </div>

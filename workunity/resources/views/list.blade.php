@@ -47,6 +47,7 @@
                                 <th class="px-6 py-4 text-left font-bold">Département</th>
                                 <th class="px-6 py-4 text-left font-bold">Poste</th>
                                 <th class="px-6 py-4 text-left font-bold">Date d'embauche</th>
+                                <th class="px-6 py-4 text-left font-bold">Salaire</th>
                                 <th class="px-6 py-4 text-center font-bold">Actions</th>
                             </tr>
                         </thead>
@@ -74,6 +75,13 @@
                                 <td class="px-6 py-4 text-gray-700">{{ $employee->poste ?? 'N/A' }}</td>
                                 <td class="px-6 py-4 text-gray-700">
                                     {{ $employee->date_embauche ? $employee->date_embauche->format('d/m/Y') : 'N/A' }}
+                                </td>
+                                <td class="px-6 py-4 text-gray-700">
+                                    @if($employee->salaire)
+                                        <span class="font-semibold text-green-600">{{ number_format($employee->salaire, 0, ',', ' ') }} €</span>
+                                    @else
+                                        <span class="text-gray-400">N/A</span>
+                                    @endif
                                 </td>
                                 <td class="px-6 py-4">
                                     <div class="flex items-center justify-center gap-2">
