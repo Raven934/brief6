@@ -44,7 +44,7 @@ class EmployeeController extends Controller
 
     public function show(Employee $employee)
     {
-        return view('employees.show', compact('employee'));
+        return view('show', compact('employee'));
     }
 
     public function edit(Employee $employee)

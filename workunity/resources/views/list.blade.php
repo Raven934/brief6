@@ -77,6 +77,9 @@
                                 </td>
                                 <td class="px-6 py-4">
                                     <div class="flex items-center justify-center gap-2">
+                                        <a href="{{ route('employees.show', $employee) }}" class="bg-pink-500 text-white px-3 py-1 rounded-lg hover:bg-pink-600 transition-colors text-sm">
+                                            👁️ Voir
+                                        </a>
                                         <a href="{{ route('employees.edit', $employee) }}" class="bg-pink-300 text-white px-3 py-1 rounded-lg hover:bg-pink-400 transition-colors text-sm">
                                             ✏️ Modifier
                                         </a>
@@ -110,32 +113,6 @@
                 </div>
             @endif
         </div>
-
-        @if(isset($employees) && $employees->count() > 0)
-            <div class="mt-8 bg-white rounded-2xl shadow-xl p-6">
-                <h3 class="text-xl font-bold text-gray-800 mb-6">📊 Statistiques des Employés</h3>
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                    <div class="bg-pink-500 text-white p-4 rounded-xl text-center">
-                        <div class="text-3xl font-bold">{{ $employees->count() }}</div>
-                        <div class="text-sm opacity-90">Total Employés</div>
-                    </div>
-                    <div class="bg-pink-400 text-white p-4 rounded-xl text-center">
-                        <div class="text-3xl font-bold">{{ $employees->unique('departement')->count() }}</div>
-                        <div class="text-sm opacity-90">Départements</div>
-                    </div>
-                    <div class="bg-pink-600 text-white p-4 rounded-xl text-center">
-                        <div class="text-3xl font-bold">
-                            {{ $employees->whereNotNull('salaire')->count() > 0 ? number_format($employees->whereNotNull('salaire')->avg('salaire'), 0) . '€' : 'N/A' }}
-                        </div>
-                        <div class="text-sm opacity-90">Salaire Moyen</div>
-                    </div>
-                    <div class="bg-pink-300 text-white p-4 rounded-xl text-center">
-                        <div class="text-3xl font-bold">{{ $employees->where('created_at', '>=', now()->subMonth())->count() }}</div>
-                        <div class="text-sm opacity-90">Nouveaux (30j)</div>
-                    </div>
-                </div>
-            </div>
-        @endif
 
     </div>
 </body>
